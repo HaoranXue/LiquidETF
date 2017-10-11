@@ -331,7 +331,7 @@ namespace MLtrading
 
                     // check if it is worth of trading this week
 
-                    if (trade_diff < 0.05)
+                    if (trade_diff < 0)
                     {
                         Equ_holding_weeks += 1;
                         ETFs_Equ = ETFs_holding_Equ;
@@ -385,7 +385,7 @@ namespace MLtrading
                     AllocationFI = PO.ETF2AllocationOwnOptim(ETFs_FI, pro_FI);
                     FI_holding_allocation = AllocationFI;
                 }
-                else if (FI_holding_weeks < 11)
+                else if (FI_holding_weeks < 15)
                 {
                     AllocationFI = FI_holding_allocation;
                 }
@@ -405,7 +405,7 @@ namespace MLtrading
                     AllocationEqu = PO.ETF2AllocationOwnOptim(ETFs_Equ, pro_Equ);
                     Equ_holding_allocation = AllocationEqu;
                 }
-                else if (Equ_holding_weeks < 11)
+                else if (Equ_holding_weeks < 15)
                 {
                     AllocationEqu = Equ_holding_allocation;
                 }
